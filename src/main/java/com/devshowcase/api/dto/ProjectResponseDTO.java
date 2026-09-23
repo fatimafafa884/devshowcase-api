@@ -6,15 +6,17 @@ public class ProjectResponseDTO {
     private String name;
     private String description;
     private String url;
+    private Double averageRating;
 
     public ProjectResponseDTO() {
     }
 
-    public ProjectResponseDTO(Long id, String name, String description, String url) {
+    public ProjectResponseDTO(Long id, String name, String description, String url, Double averageRating) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.url = url;
+        this.averageRating = averageRating;
     }
 
     public Long getId() {
@@ -47,5 +49,13 @@ public class ProjectResponseDTO {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Double getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(Double averageRating) {
+        this.averageRating = averageRating;
     }
 }

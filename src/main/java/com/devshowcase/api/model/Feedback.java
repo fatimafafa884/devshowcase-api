@@ -15,7 +15,8 @@ public class Feedback {
     private Long id;
 
     private String comment;
-
+    private Integer rating;
+    
     @ManyToOne
     @JoinColumn(name = "project_id")
     private Project project;
@@ -35,6 +36,13 @@ public class Feedback {
         this.comment = comment;
     }
 
+    public Integer getRating() {
+        return rating;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
     public Project getProject() {
         return project;
     }

@@ -22,6 +22,8 @@ public class Project {
     private String name;
     private String description;
     private String url;
+    private Double averageRating = 0.0;
+    private Integer upvotes = 0;
     
     @ManyToOne
     private Profile profile;
@@ -47,6 +49,9 @@ public class Project {
     public Long getId() {
         return id;
     }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -70,5 +75,19 @@ public class Project {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+    public Double getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(Double averageRating) {
+        this.averageRating = averageRating;
+    }
+    public Integer getUpvotes() {
+        return upvotes;
+    }
+
+    public void setUpvotes(Integer upvotes) {
+        this.upvotes = upvotes;
     }
 }

@@ -1,6 +1,7 @@
 package com.devshowcase.api.controller;
 
 import java.util.List;
+import com.devshowcase.api.model.Project;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,10 +56,17 @@ public class FeedbackController {
     }
 
     @PostMapping
+   
     public Feedback save(@Valid @RequestBody FeedbackDTO dto) {
         Feedback feedback = new Feedback();
 
         feedback.setComment(dto.getComment());
+        feedback.setRating(dto.getRating());
+
+        Project project = new Project();
+        project.setId(dto.getProjectId());
+
+        feedback.setProject(project);
 
         return service.save(feedback);
     }
